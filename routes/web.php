@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    $user = "Possidius";
+    $array = [1,2,3];
+    // dd($user);  // die and dump
+    ddd($user, $array); // dump, die & debug
+    return "<h1>Bienvenu $user !🤠</h1>";
+});
