@@ -24,9 +24,9 @@ class ArticleFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(15),
+            'title' => $this->faker->text(15),
             // on veut 15 mots
-            'body' => $this->faker->paragraph(200),
+            'body' => $this->faker->text(200),
             // on veut 50 phrases
             'user_id' => 1,
             'image' => $this->faker->image('public/images'),

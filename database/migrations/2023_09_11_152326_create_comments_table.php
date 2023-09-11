@@ -9,11 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id('comment_id');
-            $table->string('');
+            $table->string('comment', 255);
             $table->foreignId('user_id');
             $table->foreignId('article_id');
             $table->timestamps();
