@@ -10,7 +10,7 @@
             <h1>Laravel 101</h1>
             <a href="/contact-us">Contactez-nous</a><br>
             <a href="/about-us">Savoir plus</a><br>
-            <a href="/article/{{$article->id}}">Article</a><br>
+            <a href="/articles">Article</a><br>
             @yield('content')
             @yield('contents')
             @yield('article')

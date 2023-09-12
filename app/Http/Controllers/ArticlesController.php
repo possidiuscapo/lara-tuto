@@ -10,14 +10,17 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-        $article = Article::with('user')->orderBy('created_at','desc')->get();
-        return view('layouts.articles', compact('articles'));
+        $articles = Article::with('user')->orderBy('created_at','desc')->get();
+        return view('layouts.master', compact('articles'));
     }
 
     public function show($id){
-        $article = Article::with('user')->where('id', $id)->firstOrFail();
+        $article = Article::with('user')->with([
+            'comments' => function ($query) {
+                $query->with('user');
+        }])->findOrFail($id);
         //dd($article)
         //ddd($article)
-        return view('article.show', compact('article'));
+        return view('articles.show', compact('article'));
     }
 }
