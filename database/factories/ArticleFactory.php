@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Article;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -15,7 +17,7 @@ class ArticleFactory extends Factory
      * @var string
      */
 
-    protected $model = Aritcle::class;
+    protected $model = Article::class;
     /**
      * Define the model's default state.
      *
@@ -28,7 +30,9 @@ class ArticleFactory extends Factory
             // on veut 15 mots
             'body' => $this->faker->text(200),
             // on veut 50 phrases
-            'user_id' => 1,
+            'user_id' => function () {
+                return User::inRandomOrder()->first()->id;
+            },
             'image' => $this->faker->image('public/images'),
         ];
     }

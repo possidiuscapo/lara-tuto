@@ -18,33 +18,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, 'index']);
 
 Route::get('/contact-us', [PagesController::class, 'contact']);
+
 Route::get('/about-us', [PagesController::class, 'about']);
-Route::get('/articles', [ArticlesController::class, 'index']);
+
+Route::get('/article/{id}', [ArticlesController::class, 'show']);
 
 // Route::get('/', function () {
-//     $articles = [
-//         [
-//             "id" => 1,
-//             "title" => "Titre article 1",
-//             "description" => "Here is where you can register web routes for your application. These
-//             routes are loaded by the RouteServiceProvider and all of them will
-//             be assigned to the 'web' middleware group. Make something great!"
-//         ],
-//         [
-//             "id" => 2,
-//             "title" => "Titre article 2",
-//             "description" => "Here is where you can register web routes for your application. These
-//             routes are loaded by the RouteServiceProvider and all of them will
-//             be assigned to the 'web' middleware group. Make something great!"
-//         ],
-//         [
-//             "id" => 3,
-//             "title" => "Titre article 3",
-//             "description" => "Here is where you can register web routes for your application. These
-//             routes are loaded by the RouteServiceProvider and all of them will
-//             be assigned to the 'web' middleware group. Make something great!"
-//         ],
-//     ];
+//     $articles = []
+//         
 //     return view("admin.home", [
 //         'articles'=> $articles,
 //         'user'=> "Highfive 3",

@@ -15,20 +15,20 @@
     @empty
         <p>Pas d'articles disponible</p>
     @endforelse --}}
-    {{-- @each('articles.index', $articles, 'article', 'articles.no-articles') --}}
+    @each('articles.index', $articles, 'article', 'articles.no-articles')
 
-    @if ($articles)
+    {{-- @if ($articles)
         @foreach ($articles as $article)
             @include('articles.index')
         @endforeach
     @else
         @include('articles.no-artciles')
-    @endif
+    @endif --}}
 
-    @forelse ($articles as $article)
+    {{-- @forelse ($articles as $article)
         @include('articles.index')
     @empty
 
         @include('articles.no-artciles')
-    @endforelse
+    @endforelse --}}
 @endsection

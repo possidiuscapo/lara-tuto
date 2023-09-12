@@ -26,7 +26,9 @@ class CommentFactory extends Factory
             'user_id' => function () {
                 return User::inRandomOrder()->first()->id;
             },
-            'article_id' => Article::inRandomOrder()->first()->id,
+            'article_id' => function () {
+                return Article::inRandomOrder()->first()->id;
+            },
         ];
     }
 }
