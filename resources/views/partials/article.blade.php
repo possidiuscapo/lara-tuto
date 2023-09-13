@@ -1,8 +1,6 @@
-{{-- @extends('articles.articles') --}}
 <article>
-    <h3>Article écrit par {{ $article->user->name }}</h3>
+    <h4>Article écrit par {{ $article->user->name }}</h4>
     <a href="/article/{{ $article->id }}">
-        <p>{{ $article->title }} </p>
+        {{ $article['title'] }}
     </a>
-    <p>{{ $article['body'] }} </p>
 </article>

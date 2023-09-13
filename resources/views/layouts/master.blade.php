@@ -7,13 +7,25 @@
     </head>
     <body>
         <div>
-            <h1>Laravel 101</h1>
-            <a href="/contact-us">Contactez-nous</a><br>
-            <a href="/about-us">Savoir plus</a><br>
-            <a href="/articles">Article</a><br>
-            @yield('content')
-            @yield('contents')
-            @yield('article')
+            <header>
+                <h1>Laravel 101</h1>
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="/contact-us">Contactez-nous</a></li>
+                        <li><a href="/about-us">Savoir plus</a></li>
+                        <li><a href="/articles">Articles</a></li>
+                        <li><a href="/articles/create">Créer</a></li>
+                        <li></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                @yield('content')
+                @yield('contents')
+                @yield('articles')
+                @yield('createArticle')
+            </main>
         </div>
     </body>
 </html>

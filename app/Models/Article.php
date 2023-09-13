@@ -15,11 +15,26 @@ class Article extends Model
         'user_id',
         'image'
     ];
-
+    protected $appends = [
+        'author', 'comments'
+    ];
     public function user(){
         return $this->belongsTo(User::class);
     }
     public function comments(){
-        return $this->hasMany(User::class);
+        return $this->hasMany(Comment::class);
     }
+
+    public function getRouteKeyName(){
+        return 'title';
+    }
+
+    public function getAuthorAttribute(){
+        return $this->user->name;
+    }
+
+    public function getCommentsAttribute(){
+        return $this->comments()->with('user')->get();
+    }
+
 }

@@ -14,7 +14,9 @@ Route::get('/about-us', [PagesController::class, 'about']);
 
 Route::get('/articles', [ArticlesController::class, 'index']);
 
-Route::get('/articles/{id}', [ArticlesController::class, 'show']);
+Route::get('/article/{id}', [ArticlesController::class, 'show']);
+
+Route::get('/articles/create', [ArticlesController::class, 'store']);
 
 // Route::get('/', function () {
 //     $articles = []
