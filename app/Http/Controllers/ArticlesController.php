@@ -18,8 +18,6 @@ class ArticlesController extends Controller
 
     public function show($id)
     {
-        // $article = Article::with('user')->where('id', $id)->firstOrFail();
-
         $article = Article::with([
             'comments' => function ($query) {
                 $query->with('user');
@@ -37,7 +35,7 @@ class ArticlesController extends Controller
 
     public function store(Request $request)
     {
-        $user = User::find(1);
+        $user = User::find(11);
         $request['user_id'] = $user->id;
 
         $this->validate($request, [
@@ -46,7 +44,11 @@ class ArticlesController extends Controller
             'user_id' => 'required|numeric|exists:users,id',
         ]);
         // dd($request->all());
+        $art = Article::create($request->all());
+        // dd($art);
     }
-
+    public function edit(Article $article){
+        return view('articles.edit', compact('article'));
+    }
 
 }

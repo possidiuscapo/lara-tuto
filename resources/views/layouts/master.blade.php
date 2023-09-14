@@ -16,15 +16,18 @@
                         <li><a href="/about-us">Savoir plus</a></li>
                         <li><a href="/articles">Articles</a></li>
                         <li><a href="/articles/create">Créer</a></li>
-                        <li></li>
+                        {{-- <li></li> --}}
                     </ul>
                 </nav>
             </header>
             <main>
-                @yield('content')
-                @yield('contents')
-                @yield('articles')
-                @yield('createArticle')
+                <div>
+                    @yield('content')
+                    @yield('contents')
+                    @yield('articles')
+                    @yield('article')
+                    @yield('createArticle')
+                </div>
             </main>
         </div>
     </body>
