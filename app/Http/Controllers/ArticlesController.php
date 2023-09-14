@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+
     public function index()
     {
         $articles = Article::with('user')->orderBy('created_at', 'desc')->get();
@@ -43,12 +44,26 @@ class ArticlesController extends Controller
             'body' => 'required|string',
             'user_id' => 'required|numeric|exists:users,id',
         ]);
-        // dd($request->all());
-        $art = Article::create($request->all());
-        // dd($art);
+        // $art = Article::create($request->all());
+        Article::create($request->all());
+        return redirect('/articles')->with(['success_message' => 'L\'article a été crée !']);
     }
-    public function edit(Article $article){
+    public function edit(Article $article)
+    {
         return view('articles.edit', compact('article'));
+    }
+
+    public function update(Request $request, Article $article)
+    {
+        // dd($article, $request->all());
+        $article->update($request->all());
+        return view('articles.articles');
+    }
+
+    public function delete(Article $article)
+    {
+        $article->delete();
+        return view('articles.articles');
     }
 
 }

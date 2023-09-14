@@ -25,9 +25,9 @@ class Article extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function getRouteKeyName(){
-        return 'title';
-    }
+    // public function getRouteKeyName(){
+    //     return 'title';
+    // }
 
     public function getAuthorAttribute(){
         return $this->user->name;

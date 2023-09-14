@@ -24,6 +24,8 @@ Route::get('/article/{article}/edit', [ArticlesController::class, 'edit']);
 
 Route::patch('/article/{article}/edit', [ArticlesController::class, 'update']);
 
+Route::delete('/article/{article}/delete', [ArticlesController::class, 'delete']);
+
 // Route::get('/', function () {
 //     $articles = []
 //         

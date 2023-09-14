@@ -26,7 +26,10 @@
                     @yield('contents')
                     @yield('articles')
                     @yield('article')
+                    
                     @yield('createArticle')
+
+                    @include('messages.success')
                 </div>
             </main>
         </div>
