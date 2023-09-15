@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\SessionController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,6 +27,10 @@ Route::get('/article/{article}/edit', [ArticlesController::class, 'edit']);
 Route::patch('/article/{article}/edit', [ArticlesController::class, 'update']);
 
 Route::delete('/article/{article}/delete', [ArticlesController::class, 'delete']);
+
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+
+Route::get('/login', [SessionController::class, 'index'])->name('login');
 
 // Route::get('/', function () {
 //     $articles = []
