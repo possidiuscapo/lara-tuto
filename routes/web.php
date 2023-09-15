@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'index']);
 
+Route::get('/home', [PagesController::class, 'index']);
+
 Route::get('/contact-us', [PagesController::class, 'contact']);
 
 Route::get('/about-us', [PagesController::class, 'about']);
@@ -24,13 +26,15 @@ Route::post('/articles/create', [ArticlesController::class, 'store']);
 
 Route::get('/article/{article}/edit', [ArticlesController::class, 'edit']);
 
-Route::patch('/article/{article}/edit', [ArticlesController::class, 'update']);
+Route::put('/article/{article}/edit', [ArticlesController::class, 'update']);
 
 Route::delete('/article/{article}/delete', [ArticlesController::class, 'delete']);
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 
 Route::get('/login', [SessionController::class, 'index'])->name('login');
+
+Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
 // Route::get('/', function () {
 //     $articles = []

@@ -7,7 +7,7 @@
 @section('content')
     <form action="/article/{{ $article->id }}/edit" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('patch')
+        @method('put')
         @include('partials.article-form')
     </form>
 
