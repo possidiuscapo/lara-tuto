@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Article
+    Savoir plus
 @endsection
 
 @section('contents')
