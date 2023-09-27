@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+    Se connecter
+@endsection
+
 @section('login')
     <form action="/login" method="GET" enctype="multipart/form-data">
         <div class="">

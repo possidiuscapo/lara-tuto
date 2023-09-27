@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+    S'inscrire
+@endsection
+
 @section('register')
     <form action="/register" method="GET" enctype="multipart/form-data">
         <div class="">
